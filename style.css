@@ -42,6 +42,30 @@ body {
   color: var(--muted);
 }
 
+/* How-to video */
+.howto {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.howto-video {
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  border-radius: 12px;
+  background: #EEF1F5;
+}
+.howto-text h2 { margin: 0 0 4px; font-size: 1.1rem; font-weight: 600; }
+.howto-text p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
 /* Baseline bar */
 .baseline {
   display: flex;
@@ -218,5 +242,7 @@ body {
   .page-header h1 { font-size: 2.2rem; }
   .cards { grid-template-columns: repeat(3, 1fr); }
   .note { flex-grow: 1; }
+  .howto { flex-direction: row; align-items: center; gap: 24px; padding: 20px; }
+  .howto-video { width: 260px; flex-shrink: 0; }
   .baseline-field { width: 260px; }
 }

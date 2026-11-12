@@ -183,4 +183,10 @@ function render() {
     : "never");
 }
 
+// Stop the mouse wheel from changing a focused number box while scrolling the page.
+document.addEventListener("wheel", (e) => {
+  const el = e.target;
+  if (el instanceof HTMLInputElement && el.type === "number" && el === document.activeElement) el.blur();
+}, { passive: true });
+
 render();
