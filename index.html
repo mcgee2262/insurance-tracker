@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our Car Insurance Quotes</title>
+  <meta name="description" content="Tracking car insurance quotes against GEICO.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="page-header">
+      <h1>Our Car Insurance Quotes</h1>
+      <p class="subtitle">Dad + 1 teen driver · Reston, VA · Comparing against GEICO</p>
+    </header>
+
+    <section class="baseline" aria-label="Current GEICO baseline">
+      <img class="logo logo--geico" src="assets/logos/geico.png" alt="GEICO">
+      <div class="baseline-text">
+        <span class="baseline-name">GEICO</span>
+        <span class="baseline-tag">Current insurer</span>
+      </div>
+      <label class="field baseline-field">
+        <span>What we pay GEICO per year ($)</span>
+        <input id="geico" type="number" inputmode="numeric" min="0" step="1" placeholder="e.g. 3200">
+      </label>
+    </section>
+
+    <section id="cards" class="cards" aria-label="Insurer quotes"></section>
+
+    <section id="summary" class="summary" hidden aria-live="polite">
+      <p id="cheapest"></p>
+      <p id="savings"></p>
+    </section>
+
+    <footer class="page-footer">
+      <p id="updated">Last updated: never</p>
+      <button id="clear" type="button" class="btn btn--ghost">Clear all</button>
+      <p class="tm">Logos are trademarks of their respective companies. Personal use only.</p>
+    </footer>
+  </main>
+
+  <template id="card-tpl">
+    <article class="card">
+      <div class="card-top">
+        <div class="logo-box"><img class="logo" alt=""></div>
+        <span class="rank"></span>
+      </div>
+      <h2 class="name"></h2>
+      <p class="note"></p>
+      <a class="btn btn--primary quote-btn" target="_blank" rel="noopener noreferrer">Get a Quote →</a>
+      <label class="field">
+        <span>Yearly quote ($)</span>
+        <input class="in-quote" type="number" inputmode="numeric" min="0" step="1" placeholder="0">
+      </label>
+      <label class="check">
+        <input class="in-match" type="checkbox">
+        <span>Coverage matches GEICO?</span>
+      </label>
+      <label class="field">
+        <span>Notes</span>
+        <textarea class="in-notes" rows="2" placeholder="e.g. good student discount applied"></textarea>
+      </label>
+      <div class="card-bottom">
+        <button class="pill" type="button" title="Click to change status"></button>
+        <span class="unmatched" hidden>coverage not matched</span>
+      </div>
+      <p class="delta" hidden></p>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
